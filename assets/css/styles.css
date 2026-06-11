@@ -25,6 +25,9 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 /* Typography Utilities */
 .text-primary-custom { color: var(--primary); }
 .text-secondary-custom { color: var(--secondary); }
+.text-on-surface-custom { color: var(--on-surface); }
+.text-surface-container-custom { color: var(--surface-container); }
+.text-deep-navy-custom { color: var(--deep-navy); }
 .bg-primary-custom { background-color: var(--primary); color: var(--on-primary); }
 .bg-primary-custom:hover { background-color: var(--primary-fixed); }
 
@@ -104,7 +107,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .hero-bg-overlay {
-    background: linear-gradient(to bottom, rgba(10,12,16,0.9), rgba(10,12,16,0.6), rgba(10,12,16,1));
+    background: linear-gradient(to bottom, rgba(10,12,16,0.9), rgba(10, 12, 16, 0.127), rgba(10,12,16,1));
     z-index: 1;
 }
 
