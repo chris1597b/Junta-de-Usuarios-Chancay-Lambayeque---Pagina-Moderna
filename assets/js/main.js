@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add scroll effect to navbar
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(10, 12, 16, 0.8)';
+            navbar.style.background = 'rgba(18, 63, 154, 0.55)';
         } else {
-            navbar.style.background = 'rgba(10, 12, 16, 0.4)';
+            navbar.style.background = 'rgba(18, 63, 154, 0.55)';
         }
     });
 
