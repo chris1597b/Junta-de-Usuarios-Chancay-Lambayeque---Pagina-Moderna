@@ -29,21 +29,36 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const nombre = document.getElementById('nombre').value;
-            const asuntoInput = document.getElementById('asunto').value;
-            const mensaje = document.getElementById('mensaje').value;
+            const nombre = document.getElementById('nombre').value.trim();
+            const dni = document.getElementById('dni').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const asuntoInput = document.getElementById('asunto').value.trim();
+            const mensaje = document.getElementById('mensaje').value.trim();
             const mensajeEstado = document.getElementById('mensajeEstado');
 
             // Validar que los campos no estén vacíos
-            if (!nombre || !asuntoInput || !mensaje) {
+            if (!nombre || !dni || !telefono || !asuntoInput || !mensaje) {
                 mostrarMensaje('Por favor completa todos los campos', 'error', mensajeEstado);
+                return;
+            }
+
+            if (!/^\d{8}$/.test(dni)) {
+                mostrarMensaje('El DNI debe tener exactamente 8 dígitos', 'error', mensajeEstado);
+                return;
+            }
+
+            if (!/^\d{9}$/.test(telefono)) {
+                mostrarMensaje('El número de teléfono debe tener exactamente 9 dígitos', 'error', mensajeEstado);
                 return;
             }
 
             // Crear el contenido del email
             const asunto = asuntoInput;
             const cuerpoEmail = `Hola mi nombre es: ${nombre}
+Con DNI: ${dni}
+Mi número de contacto es: ${telefono}
 
+Mensaje:
 ${mensaje}`;
 
             // Crear URL encoded content
