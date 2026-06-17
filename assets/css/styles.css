@@ -253,3 +253,15 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary);
 }
+#nosotros {
+  scroll-margin-top: 6rem; /* margen al hacer scroll */
+}
+#areas {
+  scroll-margin-top: 3rem; /* margen al hacer scroll */
+}
+#noticias {
+  scroll-margin-top: 3rem; /* margen al hacer scroll */
+}
+#contacto {
+  scroll-margin-top: 5rem; /* margen al hacer scroll */
+}
