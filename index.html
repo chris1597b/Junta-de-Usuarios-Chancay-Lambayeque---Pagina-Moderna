@@ -606,6 +606,8 @@
                         style="font-size: 14px; letter-spacing: 0.05em;">Ver todo <span
                             class="material-symbols-outlined fs-6">arrow_forward</span></a>
                 </div>
+                <div id="posts" class="row g-4 mb-5"></div>
+
                 <div class="row g-5">
                     <!-- Featured News -->
 
@@ -864,6 +866,77 @@
 
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
+    <script>
+        const POSTS_ENDPOINT = window.location.hostname.includes("localhost")
+            ? "/api/facebook"
+            : "https://junta-de-usuarios-chancay-lambayequ.vercel.app/api/facebook";
+
+        function escapeHtml(value) {
+            return String(value)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/\"/g, "&quot;")
+                .replace(/'/g, "&#39;");
+        }
+
+        function formatDate(value) {
+            if (!value) return "Reciente";
+            const date = new Date(typeof value === "number" ? value * 1000 : value);
+            return date.toLocaleString("es-ES", {
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit"
+            });
+        }
+
+        async function loadPosts() {
+            const container = document.getElementById("posts");
+            if (!container) return;
+
+            try {
+                const response = await fetch(POSTS_ENDPOINT);
+                if (!response.ok) throw new Error("No se pudieron cargar los posts");
+
+                const posts = await response.json();
+
+                if (!Array.isArray(posts) || posts.length === 0) {
+                    container.innerHTML = `
+                        <div class="col-12">
+                            <div class="glass-card p-4 text-white text-center">
+                                Aún no hay publicaciones recibidas desde el webhook.
+                            </div>
+                        </div>`;
+                    return;
+                }
+
+                container.innerHTML = posts.map((post) => `
+                    <div class="col-12 col-lg-6">
+                        <div class="glass-card p-4 h-100 ambient-glow">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <strong class="text-white">${escapeHtml(post.author || "Página")}</strong>
+                                <span class="text-white-50 small">${escapeHtml(formatDate(post.created))}</span>
+                            </div>
+                            <p class="text-white mb-0">${escapeHtml(post.message || "Sin mensaje")}</p>
+                        </div>
+                    </div>
+                `).join("");
+            } catch (error) {
+                console.error(error);
+                container.innerHTML = `
+                    <div class="col-12">
+                        <div class="glass-card p-4 text-white text-center">
+                            No se pudieron cargar las publicaciones en este momento.
+                        </div>
+                    </div>`;
+            }
+        }
+
+        loadPosts();
+        setInterval(loadPosts, 30000);
+    </script>
 </body>
 
 </html>
