@@ -9,6 +9,7 @@
     --on-surface: #e0e3e5;
     --glass-stroke: rgba(255, 255, 255, 0.12);
     --surface-container: #1d2022;
+    --gris-texto: #b7b7b793;
 }
 
 html {
@@ -47,7 +48,7 @@ body {
 
 
 
-h1, h2, h3, h4, h5, h6, .font-heading {
+h1, h2, h3, h4, h5, h6,p .font-heading {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -79,6 +80,18 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .bg-primary-custom:hover {
     background-color: var(--primary-fixed);
+}
+.bg-secondary-custom {
+    border:1px solid var(--secondary);
+    color: var(--secondary);
+}
+.bg-secondary-custom:hover {
+    background-color: var(--secondary);
+    color: var(--deep-navy);
+}
+
+.bg-terceary-custom {
+    color: var(--gris-texto);
 }
 
 /* Icons */
@@ -143,6 +156,16 @@ h1, h2, h3, h4, h5, h6, .font-heading {
     background-color: var(--primary) !important;
     color: var(--on-primary) !important;
 }
+/* Modal Convocatoria */
+.table {
+    margin-bottom: 0;
+    border:none;
+}
+.table td {
+    background: transparent !important;
+
+}
+
 
 /* Hero Section */
 .hero-section {

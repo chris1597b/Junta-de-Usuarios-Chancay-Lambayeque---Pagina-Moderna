@@ -65,22 +65,93 @@
 
     <main>
         <!-- Modal -->
-        <div class="modal fade-20" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content glass-card" style="margin-top: 10rem;">
-                    <div class="modal-header"> 
-                        <h1 class="modal-title fs-5 text-secondary-custom" id="exampleModalLabel">Lista de las Convocatorias</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal fade-20 glass-card " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                <div class="modal-content glass-card" style="margin-top: 10rem; ">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-4 text-secondary-custom" id="exampleModalLabel">Lista de las
+                            Convocatorias</h1>
+                        <button type="button" class="btn-close text-secondary-custom" data-bs-dismiss="modal"
+                            aria-label="Close" style="background-color: #b7f568;"></button>
                     </div>
                     <div class="modal-body">
-                        <h5 class="text-primary-custom" >Vigentes:</h5>
-                        <p>BASES INTEGRADAS DE LICITACIÓN PÚBLICA PARA LA CONTRATACIÓN DE BIENES "ADQUISICION DE UN VOLQUETE"</p>
-                        <p>Descripción de la convocatoria 2</p>
-                        <h2>Convocatoria 2</h2>
+                        <h5 class="text-primary-custom">Vigentes:</h5>
+                        <p>Actualmente no ahy ninguna convocatoria vigente.</p>
+                        <h5 class="text-primary-custom">Concluidos:</h5>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-borderless align-middle">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p class="bg-terceary-custom">Bases integradas de licitación pública para la contratación de bienes
+                                            "Adquisición de un volquete".</p>
+                                        </td>
+                                        <td class="text-end" style="width: 100px;">
+                                            <a href="assets/archivos/convocatoria/BASES INTEGRADAS DE LICITACIÓN PUBLICA PARA LA CONTRATACIÓN.pdf" target="_blank" class="btn bg-secondary-custom btn-sm">
+                                                Ver
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <p class="bg-terceary-custom">Bases – Licitación Pública N.° 02-2025-JUSHMCHL –
+                                            "Adquisición de un Volquete".</p>
+                                        </td>
+                                        <td class="text-end">
+                                            <a href="assets/archivos/convocatoria/BASES DE LICITACIÓN PUBLICA CONTRATACIÓN VOLQUETE.pdf" target="_blank" class="btn bg-secondary-custom btn-sm">
+                                                Ver
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <p class="bg-terceary-custom">Bases del proceso de selección para la contratación de un (01)
+                                            especialista en estudios, inspección y supervisión en la Dirección
+                                            de Desarrollo de la Infraestructura Hidráulica.</p>
+                                        </td>
+                                        <td class="text-end ">
+                                            <a href="#" class="btn bg-terceary-custom  btn-sm" style=" border:1px solid var(--gris-texto);">
+                                                Ver
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <p class="bg-terceary-custom">Bases del proceso de selección especialista en estudios.</p>
+                                        </td>
+                                        <td class="text-end">
+                                            <a href="assets/archivos/convocatoria/BASES ESPECIALISTA EN ESTUDIOS FINAL0001.pdf" target="_blank" class="btn bg-secondary-custom btn-sm">
+                                                Ver
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <p class="bg-terceary-custom">Bases del proceso de selección para la contratación de un (01)
+                                            contador general.</p>
+                                        </td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn bg-terceary-custom  btn-sm" style=" border:1px solid var(--gris-texto);">
+                                                Ver
+                                            </a>
+                                        </td>
+                                    </tr>
+                    
+                                    
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn" data-bs-dismiss="modal"
+                            style="background-color: #b7f568; color:black">Close</button>
+
                     </div>
                 </div>
             </div>
@@ -104,12 +175,12 @@
                             <span>Explorar Servicios</span>
                             <span class="material-symbols-outlined fs-5">arrow_forward</span>
                         </button></a>
-                    <a href="#convocatorias" style="text-decoration: none;">
                         <button
-                            class="btn glass-card text-white btn-custom-pill d-flex align-items-center justify-content-center gap-2 px-4 py-3">
+                            class="btn glass-card text-white btn-custom-pill d-flex align-items-center justify-content-center gap-2 px-4 py-3" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
                             <span>Convocatorias</span>
                             <span class="material-symbols-outlined fs-5">description</span>
-                        </button></a>
+                        </button>
                 </div>
 
                 <!-- KPIs -->
