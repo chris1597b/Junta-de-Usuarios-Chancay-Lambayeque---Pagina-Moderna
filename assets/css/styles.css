@@ -290,3 +290,10 @@ p {
 #contacto {
   scroll-margin-top: 5rem; /* margen al hacer scroll */
 }
+#fb {
+    border-radius: 12px;
+    overflow-y: hidden;
+    width: 100%;
+    height: 800px;
+    overflow-y: hidden;
+}
